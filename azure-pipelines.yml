@@ -19,6 +19,7 @@ steps:
 
 - task: NuGetCommand@2
   inputs:
+    command: 'restore'
     restoreSolution: '$(solution)'
     
 - task: MSBuild@1
@@ -26,7 +27,6 @@ steps:
     solution: '$(solution)'
     platform: 'x86'
     configuration: '$(buildConfiguration)'
-    restoreNugetPackages: true
 
 - task: VSTest@2
   inputs:
