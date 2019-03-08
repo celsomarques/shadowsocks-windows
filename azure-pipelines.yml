@@ -26,6 +26,7 @@ steps:
     solution: '$(solution)'
     platform: 'x86'
     configuration: '$(buildConfiguration)'
+    restoreNugetPackages: true
 
 - task: VSTest@2
   inputs:
