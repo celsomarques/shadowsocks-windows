@@ -25,9 +25,8 @@ steps:
 
 - task: NuGetToolInstaller@0
 
-- task: NuGet@2
+- task: NuGetRestore@2
   inputs:
-    command: 'restore'
     restoreSolution: '$(solution)'
 
 - task: MSBuild@1
