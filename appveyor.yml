@@ -14,7 +14,7 @@ before_build:
 - cmd: nuget restore
 build_script:
  - choco install "sonarscanner-msbuild-net46" -y
- - SonarScanner.MSBuild.exe begin /k:"celsomarques_shadowsocks-windows" /d:sonar.organization="celsomarques-github" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="cc66ac52dd2c887639e58c43a749585a0a3683c5"
+ - SonarScanner.MSBuild.exe begin /k:"celsomarques_shadowsocks-windows" /o:"celsomarques-github" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="cc66ac52dd2c887639e58c43a749585a0a3683c5"
  - msbuild /verbosity:quiet "shadowsocks-windows.sln"
  - SonarScanner.MSBuild.exe end /d:sonar.login="cc66ac52dd2c887639e58c43a749585a0a3683c5"
 artifacts:
